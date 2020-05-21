@@ -1,5 +1,5 @@
 from flask import Flask, render_template,request, jsonify,session
-from flask_session.__init__ import Session
+#from flask_session import Session
 from flask_uploads import configure_uploads, IMAGES, UploadSet
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf.csrf import CSRFProtect
@@ -15,7 +15,7 @@ app.config['UPLOADED_IMAGES_DEST']= "static/"
 images = UploadSet('images',IMAGES)
 configure_uploads(app,images)
 db = SQLAlchemy(app)
-Session(app)
+#Session(app)
 
 class Photo(FlaskForm):
    image = FileField('image')    
